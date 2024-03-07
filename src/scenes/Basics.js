@@ -96,15 +96,10 @@ class Basics extends Phaser.Scene {
         // enable scene reload key
         this.reload = this.input.keyboard.addKey('R')
 
-        // set onStart callback to set the initial position of the pear
-        pearTweenChain.setCallback('onStart', () => {
-            verygoodpear.setPosition(64, 64)
-            verygoodpear.setAngle(0); // Set the initial angle to 0 degrees
-        })
-
         //add mouse input listener to start tween chain
         this.input.on('pointerdown', () => {
             verygoodpear.setPosition(64, 64)
+            verygoodpear.setAngle(0)
             pearTweenChain.restart()
 
         })
